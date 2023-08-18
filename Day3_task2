@@ -1,0 +1,8 @@
+create table Course(c_no int,c_name text,c_teacher text);
+create table coursecopy as select * from Course;
+alter table coursecopy add column c_type text;
+alter table coursecopy add column c_fees double;
+alter table coursecopy rename column c_type to c_mode;
+alter table coursecopy drop column c_mode;
+alter table coursecopy drop column c_fees;
+
