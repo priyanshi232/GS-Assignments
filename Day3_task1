@@ -1,0 +1,4 @@
+create table department(dept_no int primary key,dept_name varchar(10),dept_location text );
+insert into department values(1,"engineering","hyderabd"),(2,"hr","banglore");
+create table employee(emp_no int,emp_name text,emp_age int,emp_gender char(1),dept_no int, foreign key(dept_no) references department(dept_no) on delete cascade );
+insert into employee values(102,"riyanshi singh",20,'F',1);
