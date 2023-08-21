@@ -1,0 +1,19 @@
+ 1.
+    select e.emp_name,e.emp_sal,e.emp_no,a.address_id,a.city,a.state,d.deptno,d.dept_name,d.dept_manager from department d join
+   address a join employee e where e.deptno=d.deptno and a.address_id=d.address_id;
+
+
+
+
+2
+2.1 create table bankaccount(acc_no int primary key,acc_opened_date date,status text,balance double);
+2.2 create table transcation(acc_no int,trans_type text,trans_date date,trans_amount double,foreign key(acc_no) references bankaccount(acc_no) on delete cascade);
+
+
+
+
+
+3.
+3.1 create table employee1(emp_no int,emp_name text,emp_sal decimal,department text,manager_name text);
+3.2 select manager_name,sum(emp_sal) as total_salary from employee1 group by manager_name;
+3.3 select emp_sal from employee1 order by emp_sal desc offset 3 limit 1;
