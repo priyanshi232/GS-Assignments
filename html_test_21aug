@@ -1,0 +1,193 @@
+*************************************************************        1 *******
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .image {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .image:hover {
+    transform: scale(1.2);
+  }
+</style>
+</head>
+<body>
+<div class="image-grid">
+  <div class="image"><img src="https://hips.hearstapps.com/hmg-prod/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg" alt="Image 1"></div>
+  <div class="image"><img src="https://hips.hearstapps.com/hmg-prod/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg" alt="Image 2"></div>
+  <div class="image"><img src="https://hips.hearstapps.com/hmg-prod/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg" alt="Image 3"></div>
+  <div class="image"><img src="https://hips.hearstapps.com/hmg-prod/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg" alt="Image 4"></div>
+  <!-- Add more images here -->
+</div>
+</body>
+</html>
+
+
+
+******************   2   **************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  .mandatory {
+    color: red;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <form>
+    <table>
+      <tr>
+        <th>Field</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td>First Name <span class="mandatory">*</span></td>
+        <td><input type="text" name="firstName" required></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="lastName"></td>
+      </tr>
+      <tr>
+        <td>Mobile <span class="mandatory">*</span></td>
+        <td><input type="tel" name="mobile" pattern="[0-9]+" required></td>
+      </tr>
+       <tr>
+        <td>Email <span class="mandatory">*</span></td>
+        <td><input type="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td>Date of Birth</td>
+        <td><input type="date" name="dob"></td>
+      </tr>
+      <tr>
+        <td>Password <span class="mandatory">*</span></td>
+        <td><input type="password" name="password" required></td>
+      </tr>
+      <tr>
+        <td>Country</td>
+        <td>
+          <select name="country">
+            <option value="country1">india</option>
+            <option value="country2">USA</option>
+            <option value="country3">China</option>
+            
+          </select>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Qualifications <span class="mandatory">*</span></td>
+        <td>
+          <input type="checkbox" name="qualification" value="qualification1"> Btech<br>
+          <input type="checkbox" name="qualification" value="qualification2"> MBA
+
+        </td>
+      </tr>
+      <tr>
+        <td>Gender <span class="mandatory">*</span></td>
+        <td>
+          <input type="radio" name="gender" value="male"> Male
+          <input type="radio" name="gender" value="female"> Female
+        </td>
+      </tr>
+    </table>
+    <button type="submit">Register</button>
+    <button type="reset">Cancel</button>
+  </form>
+</body>
+</html> 
+
+
+****3
+style.css
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  background-color: lightgrey;
+}
+table, th, td {
+  border: 1px solid black;
+}
+tr:hover {
+  background-color: yellow;
+}
+
+index.html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<table>
+  <tr>
+    <th>1</th>
+    <th>2</th>
+  </tr>
+  <tr>
+    <td>1.1 hello</td>
+    <td>1.2 hi</td>
+  </tr>
+  <tr>
+    <td>2.2 happy</td>
+    <td>2.3 sad</td>
+  </tr>
+  <tr>
+    <td>3.4 start</td>
+    <td>3.5 end</td>
+  </tr>
+  <tr>
+    <td>4.1 amazing</td>
+    <td>4.2 awesome</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
