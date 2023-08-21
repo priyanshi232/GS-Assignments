@@ -13,25 +13,79 @@
     <hr>
      <label for="fn"><b>First Name</b></label>
      <input type="text" placeholder="Enter first name" name="fn" id="fn" required>
+     <br>
         <label for="ln"><b>Last Name</b></label>
      <input type="text" placeholder="Enter Last name" name="fn" id="ln" required>
+     <br>
+        <label for="db"><b>date of birth</b></label>
+     <input type=date placeholder="Enter first name" name="dob" id="dob" required>
      
-        <label for="f"><b>First Name</b></label>
-     <input type="text" placeholder="Enter first name" name="fn" id="fn" required>
-     
-     
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
+    
+    <br>
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
+    <br>
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
+    
+      <br>
+    <label for="qlf"><b>Qualification</b></label><br>
+      <input type="checkbox" id="quali" name="q1" value="Btech">
+  <label for="q1">Btech</label><br>
+  <input type="checkbox" id="q2" name="q2" value="MBA">
+  <label for="q2"> MBA</label><br>
+  <input type="checkbox" id="q3" name="q3" value="Phd">
+  <label for="q3"> Phd</label><br>
+     
+      <label for="gender"><b>Please select your gender</b></label> <br>
+  <input type="radio" id="male" name="male" value="male">
+  <label for="male">male</label><br>
+
+  <input type="radio" id="female" name="female" value="female">
+  <label for="female">female</label><br>
+    
+     <br>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    
+     <br>
+    <label for="cm"><b>Comments</b></label>
+    <input type="textarea" placeholder="Enter comment" name="cm" id="cm" required>
+       <br>
+  <label for="phone"><b>phone number</b></label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+
+    <br>
+    
+    
+    <label for="country"><b>Choose a country</b></label>
+
+<select name="country" id="country">
+  <option value="india">india</option>
+  <option value="china">china</option>
+  <option value="USA">USA</option>
+  <option value="Russia">Russia</option>
+</select>
+
+<br>
+   <label for="state"><b>Choose a state</b></label>
+
+<select name="state" id="state">
+  <option value="UP">Uttar Pradesh</option>
+  <option value="MP">Madhya Pradesh</option>
+  <option value="JK">Jharkhand</option>
+  <option value="DEL">Delhi</option>
+</select>
+
+<br>
+     <p><label for="comments"><b>comments</b></label></p>
+  <textarea id="comments" name="comments" rows="4" cols="50">enter your comments if any
+  </textarea>
+  <br>
 
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" value="Register" class="registerbtn">Submit</button>
+    <button type="reset" value="cancel" class="resetbtn">Reset</button>
   </div>
   
   <div class="container signin">
@@ -41,4 +95,3 @@
 
 </body>
 </html>
-
