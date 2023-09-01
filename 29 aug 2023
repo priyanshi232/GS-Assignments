@@ -22,8 +22,10 @@ def register_user():
     password_main=register.rpass.text()
 
 def gotoLogin():
+    register.close() 
     login.show()
-    register.close()
+    
+    
 
 demo = QtWidgets.QApplication([])
     
