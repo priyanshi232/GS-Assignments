@@ -1,0 +1,40 @@
+                +----------------+
+                |    Library     |
+                +----------------+
+                | - users: dict   |
+                | - book_list: dict|
+                | - time_record_list: dict |
+                +----------------+
+                | + add_book(book: Book) |
+                | + del_book(isbn: str)  |
+                | + update_book(isbn: str, name: str) |
+                | + check_title(title: str) |
+                | + check_isbn(isbn: str)  |
+                | + add_user(user: User) |
+                | + change_user(serial_no: str, new_address: str, new_area_code: str) |
+                | + issue_book(isbn: str, issue_date: str) |
+                | + return_book(isbn: str, return_date: str) |
+                | + calculate_late_fees(isbn: str) |
+                | + add_rating(isbn: str, rating: float, username: str) |
+                | + display() |
+                | + avg_rating(publisher: str) |
+                | + total_books_per_year() |
+                | + top_five_rated_books() |
+                +----------------+
+
+                   /             \
+                  /               \
+                 /                 \
+                /                   \
+   +------------+              +------------+
+   |     Book     |            |     User     |
+   +------------+              +------------+
+   | - name: str  |            | - serial_no: str |
+   | - isbn: str  |            | - address: str  |
+   | - title: str |            | - area_code: str |
+   | - author: str|            +----------------+
+   | - year_of_publication: str |
+   | - publisher: str           |
+   | - image_url: str           |
+   +---------------------------+
+
