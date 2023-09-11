@@ -15,7 +15,11 @@ class User:
         self.serial_no = serial_no
         self.address = address
         self.area_code = area_code
-
+class BooksRatings:
+    def __init__(self,serial_no,isbn, rating):
+        self.serial_no = serial_no
+        self.isbn = isbn
+        self.rating = rating
 class Library:
     def __init__(self):
         self.users = {}
@@ -77,7 +81,7 @@ class Library:
         self.time_record_list[isbn].append({'action': 'return', 'date': return_date})
         print(f"Book '{self.book_list[isbn]['book_info'].title}' with ISBN {isbn} is returned on {return_date}\n")
         #calculating late fees along with returning book.
-         if isbn in self.time_record_list:
+        if isbn in self.time_record_list:
             record_list = self.time_record_list[isbn]
             issue_date = None
             return_date = None
@@ -124,7 +128,10 @@ class Library:
         else:
             print("No record found for this book. Cannot calculate late fees.\n")
     
-    def add_rating(self, isbn, rating, username):
+    def add_rating(self, user_rating):
+        isbn = user_rating.isbn
+        rating = user_rating.rating
+        
         for key,value in self.book_list.items():
             book = value['book_info']
             if book.isbn == isbn:
@@ -135,22 +142,27 @@ class Library:
             print("No books to display!")
         for key,value in self.book_list.items():
             book = value['book_info'] 
-            print(f"Title: {book.title}, ISBN: {book.isbn}, Area Code: {book.publisher} Rating: value['ratings']")
-    
+            print(f"Title: {book.title}, ISBN: {book.isbn}, Area Code: {book.publisher}, Rating1s by users: {value['ratings']}")
     def avg_rating(self, publisher):
         total_rating = 0
         count = 0
+
         for key, value in self.book_list.items():
             book = value['book_info']
+
             if book.publisher == publisher:
-                total_rating += sum(value['ratings'])
-                count += len(value['ratings'])
-        
+                ratings = value['ratings']  
+                rating_l = [int(rating) for rating in ratings]
+                total_rating += sum(rating_l)  # Sum of all ratings for books from the publisher
+                count += len(rating_l)  # Total number of ratings for books from the publisher
+
         if count > 0:
             average_rating = total_rating / count
             print(f"Average rating for Publisher {publisher} is {average_rating:.2f}\n")
         else:
             print(f"No ratings found for books from Publisher {publisher}\n")
+
+
  
     def total_books_per_year(self):
         year_count = {}
@@ -167,13 +179,13 @@ class Library:
         for key,value in year_count.items():
             print(f"Year: {key}, Books: {value}\n")
             
-
-
     def top_five_rated_books(self):
         rating_list = {}
         for isbn, book_info in self.book_list.items():
             ratings = book_info['ratings']
             if ratings:
+                # Convert the ratings to integers
+                ratings = [int(rating) for rating in ratings]
                 average_rating = sum(ratings) / len(ratings)
                 rating_list[isbn] = average_rating
 
@@ -186,6 +198,7 @@ class Library:
         for isbn, rating in top_5_items:
             book = self.book_list[isbn]['book_info']
             print(f"Title: {book.title}, ISBN: {isbn}, Rating: {rating:.2f}")
+
 
 
 
@@ -202,12 +215,13 @@ def main():
         print("7. Update User")
         print("8. Issue Book")
         print("9. Return Book")
-        print("10. Display Books")
-        print("11. Calculate Average Rating")
-        print("12. Calculate Total Books per Year")
-        print("13. Display Top Five Books")
-        print("14. Calculate late fees for a book")
-        print("15. Quit")
+        print("10. Add Rating to book")
+        print("11. Display Books")
+        print("12. Calculate Average Rating")
+        print("13. Calculate Total Books per Year")
+        print("14. Display Top Five Books")
+        print("15. Calculate late fees for a book")
+        print("16. Quit")
         
         choice = int(input("Enter your choice: "))
         
@@ -254,18 +268,24 @@ def main():
             return_date = input("Enter return date: ")
             library.return_book(isbn, return_date)
         elif choice == 10:
-            library.display()
+            srno = input("Enter serial no: ")
+            isbn = input("Enter isbn: ")
+            rating = input("Enter rating: ")
+            user_rating = BooksRatings(srno,isbn,rating)
+            library.add_rating(user_rating)
         elif choice == 11:
+            library.display()
+        elif choice == 12:
             publisher = input("Enter publisher: ")
             library.avg_rating(publisher)
-        elif choice == 12:
-            library.total_books_per_year()
         elif choice == 13:
-            library.top_five_rated_books()
+            library.total_books_per_year()
         elif choice == 14:
+            library.top_five_rated_books()
+        elif choice == 15:
             isbn = input("Enter isbn of the book to calculate late fees: ")
             library.calculate_late_fees(isbn)
-        elif choice == 15:
+        elif choice == 16:
             print("Exiting the program.")
             break
         else:
