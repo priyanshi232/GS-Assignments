@@ -1,40 +1,57 @@
-                +----------------+
-                |    Library     |
-                +----------------+
-                | - users: dict   |             // to store users details
-                | - book_list: dict|            // to store book information
-                | - time_record_list: dict |    // to store issue and return time for a book
-                +----------------+
-                | + add_book(book: Book) |
-                | + del_book(isbn: str)  |
-                | + update_book(isbn: str, name: str) |
-                | + check_title(title: str) |
-                | + check_isbn(isbn: str)  |
-                | + add_user(user: User) |
-                | + change_user(serial_no: str, new_address: str, new_area_code: str) |
-                | + issue_book(isbn: str, issue_date: str) |
-                | + return_book(isbn: str, return_date: str) |
-                | + calculate_late_fees(isbn: str) |
-                | + add_rating(isbn: str, rating: float, username: str) |
-                | + display() |
-                | + avg_rating(publisher: str) |
-                | + total_books_per_year() |
-                | + top_five_rated_books() |
-                +----------------+
++-------------------------------------+
+|              Library                |
++-------------------------------------+
+| - users: dict                       |     // to store users details
+| - book_list: dict                   |     // to store book information
+| - time_record_list: dict            |     // to store issue and return time and date
++-------------------------------------+
+| + add_book(book: Book): void        |
+| + del_book(isbn: str): void         |
+| + update_book(isbn: str, name: str): void |
+| + check_title(title: str): void     |
+| + check_isbn(isbn: str): void       |
+| + add_user(user: User): void        |
+| + change_user(serial_no: str, new_address: str, new_area_code: str): void |
+| + issue_book(isbn: str, issue_date: str): void |
+| + return_book(isbn: str, return_date: str): void |
+| + calculate_late_fees(isbn: str): void |
+| + add_rating(user_rating: BooksRatings): void |
+| + display(): void                   |
+| + avg_rating(publisher: str): void  |
+| + total_books_per_year(): void      |
+| + top_five_rated_books(): void      |
++-------------------------------------+
 
-                   /             \
-                  /               \
-                 /                 \
-                /                   \
-   +------------+              +------------+
-   |     Book     |            |     User     |
-   +------------+              +------------+
-   | - name: str  |            | - serial_no: str |
-   | - isbn: str  |            | - address: str  |
-   | - title: str |            | - area_code: str |
-   | - author: str|            +----------------+
-   | - year_of_publication: str |
-   | - publisher: str           |
-   | - image_url: str           |
-   +---------------------------+
++-------------------------------------+
+|                Book                 |
++-------------------------------------+
+| - name: str                         |
+| - isbn: str                         |
+| - title: str                        |
+| - author: str                       |
+| - year_of_publication: int          |
+| - publisher: str                    |
+| - image_url: str                    |
++-------------------------------------+
+| constructor(...)                    |
++-------------------------------------+
 
++-------------------------------------+
+|                User                 |
++-------------------------------------+
+| - serial_no: str                    |
+| - address: str                      |
+| - area_code: str                    |
++-------------------------------------+
+| constructor(...)                    |
++-------------------------------------+
+
++-------------------------------------+
+|           BooksRatings              |
++-------------------------------------+
+| - serial_no: str                    |
+| - isbn: str                         |
+| - rating: int                       |
++-------------------------------------+
+| constructor(...)                    |
++-------------------------------------+
