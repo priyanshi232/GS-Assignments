@@ -1,9 +1,9 @@
                 +----------------+
                 |    Library     |
                 +----------------+
-                | - users: dict   |
-                | - book_list: dict|
-                | - time_record_list: dict |
+                | - users: dict   |             // to store users details
+                | - book_list: dict|            // to store book information
+                | - time_record_list: dict |    // to store issue and return time for a book
                 +----------------+
                 | + add_book(book: Book) |
                 | + del_book(isbn: str)  |
